@@ -1,9 +1,13 @@
 import { assert } from "chai";
-import { addition } from "../src/data";
+import findCommonChars from "../src/data";
 
-describe("Calculator Tests", () => {
-      it("should return 5 when 2 is added to 3", () => {
-      const result = addition(2, 3);
-      assert.equal(result, 5);
-   });
+describe("common char Tests", () => {
+  it("it should return  [{ a: 1 }, { b: 2 }, { c: 2 }]", () => {
+    const result = findCommonChars("abbbccdfa", "abbccc");
+    assert.deepEqual(result, [{ a: 1 }, { b: 2 }, { c: 2 }]);
+  });
+  it("it should return [] ", () => {
+   const result = findCommonChars("bb", "ff");
+   assert.deepEqual(result, []);
+ });
 });
